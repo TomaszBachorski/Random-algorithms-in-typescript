@@ -17,15 +17,16 @@ function longestPalindromInString(text) {
             }
         }
         let tempStringForEven = "";
-        if (text[i] === text[i + 1])
+        if (text[i] === text[i + 1]) {
             tempStringForEven = text[i] + text[i + 1];
-        for (let j = 1; j <= maxWidth; j++) {
-            if (text[i - j] === text[i + j + 1]) {
-                tempStringForEven = text[i - j] + tempStringForEven + text[i + j + 1];
-                continue;
-            }
-            else {
-                break;
+            for (let j = 1; j <= maxWidth; j++) {
+                if (text[i - j] === text[i + j + 1]) {
+                    tempStringForEven = text[i - j] + tempStringForEven + text[i + j + 1];
+                    continue;
+                }
+                else {
+                    break;
+                }
             }
         }
         if (longestPalindroms.length === 0 || (longestPalindroms[0].length <= tempString.length)) {

@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const algortihms_1 = require("./algortihms");
+const algorithms_1 = require("./algorithms");
 const ciphers_1 = require("./ciphers");
-let stringsForPalindroms = new Array("baba", "dakshbjhhhhhhhha", "anty", "habcdadcg", "alamakotaatokdsdas", "ala", "abba");
+let stringsForPalindroms = new Array("baba", "dakshbjhhhhhhhha", "anty", "habcdadcg", "alamakotaatokdsdas", "ala", "abba", "dasdaa");
 for (let i = 0; i < stringsForPalindroms.length; i++) {
-    let longestPalindrom = (0, algortihms_1.longestPalindromInString)(stringsForPalindroms[i]);
-    // console.log(longestPalindrom, longestPalindrom[0].length, (longestPalindrom[0].length === 1 ? "letter" : "letters"));
+    let longestPalindrom = (0, algorithms_1.longestPalindromInString)(stringsForPalindroms[i]);
+    console.log(longestPalindrom, longestPalindrom[0].length, (longestPalindrom[0].length === 1 ? "letter" : "letters"));
 }
 let passwords = new Array("Caesar1230", "beM0n04lph4b3t1c", "vi3gn3rCoolGuy");
 for (let i = 0; i < passwords.length; i++) {
