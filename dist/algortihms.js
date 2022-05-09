@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.longestPalindromInAString = void 0;
-function longestPalindromInAString(text) {
+exports.longestPalindromInString = void 0;
+function longestPalindromInString(text) {
     let longestPalindroms = new Array();
     let longestStringLength = 0;
     for (let i = 0; i < text.length; i++) {
@@ -45,4 +45,4 @@ function longestPalindromInAString(text) {
     }
     return longestPalindroms;
 }
-exports.longestPalindromInAString = longestPalindromInAString;
+exports.longestPalindromInString = longestPalindromInString;

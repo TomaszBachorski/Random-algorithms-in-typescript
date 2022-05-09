@@ -1,4 +1,4 @@
-function longestPalindromInAString(text: string): string[] {
+function longestPalindromInString(text: string): string[] {
     let longestPalindroms: string[] = new Array();
     let longestStringLength: number = 0;
     for (let i = 0; i < text.length; i++) {
@@ -37,4 +37,4 @@ function longestPalindromInAString(text: string): string[] {
     return longestPalindroms;
 }
 
-export { longestPalindromInAString }
+export { longestPalindromInString }
