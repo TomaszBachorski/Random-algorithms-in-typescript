@@ -54,8 +54,7 @@ function longestPalindromInString(element) {
         if (tempStringForEven.length > longestStringLength)
             longestStringLength = tempStringForEven.length;
     }
-    console.log(1);
-    element.children[element.children.length - 1].textContent = longestPalindroms.join(", ");
+    element.children[element.children.length - 1].textContent = `${longestPalindroms.join(", ")} - ${longestStringLength} ${longestStringLength === 1 ? "letter" : "letters"}`;
     return true;
 }
 exports.longestPalindromInString = longestPalindromInString;
