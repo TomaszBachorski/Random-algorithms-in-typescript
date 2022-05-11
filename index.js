@@ -5,6 +5,7 @@ const app = express();
 const port = 80;
 
 app.use("/javascript", express.static(__dirname+"/dist"));
+app.use("/css", express.static(__dirname+"/pages/css"));
 
 app.get("/",(req, res)=>{
     res.status(200).sendFile(__dirname + "/pages/index.html")

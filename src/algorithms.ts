@@ -1,4 +1,14 @@
-function longestPalindromInString(text: string): string[] {
+function longestPalindromInString(element: HTMLElement): boolean {
+    let text: string = (element.children[1] as HTMLFormElement).value || "";
+    if (element.children[element.children.length-1].id!=="palindromResult") {
+        var p = document.createElement("p");
+        p.setAttribute("id","palindromResult");
+        element.appendChild(p);
+    }
+    if (!text) {
+        element.children[element.children.length-1].textContent = "Tried to check palindroms in empty text";
+        return false;
+    }
     let longestPalindroms: string[] = new Array();
     let longestStringLength: number = 0;
     for (let i = 0; i < text.length; i++) {
@@ -36,7 +46,9 @@ function longestPalindromInString(text: string): string[] {
         if (tempStringForEven.length > longestStringLength) longestStringLength = tempStringForEven.length;
 
     }
-    return longestPalindroms;
+    console.log(1)
+    element.children[element.children.length-1].textContent = longestPalindroms.join(", ");
+    return true;
 }
 
 export { longestPalindromInString }

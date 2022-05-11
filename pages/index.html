@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script>var exports = {};</script>
+
+    <link rel="stylesheet" href="/css/index.css">
+    
+    <script>let exports={}; </script>
     <script src="/javascript/ciphers.js" defer></script>
     <script src="/javascript/algorithms.js" defer></script>
 </head>
 <body>
     <div>
-        Finding longest palindrom <br>
-        <input type="text" id="textToFindPalindrom"> <br>
-        <button onclick="palindromWork()">Find palindrom</button> <br>
-        <p id="insertResult"></p>
+        <h2>Finding longest palindrom</h2>
+        <input type="text" id="textToFindPalindrom">
+        <button onclick="longestPalindromInString(this.parentNode)">Find palindrom</button>
     </div>
 </body>
     <script>
-        function palindromWork() {
-            let text = document.getElementById("textToFindPalindrom").value;
-            if (!text)  document.querySelector("#insertResult").innerText = "Not given text";
-            else document.querySelector("#insertResult").innerText = longestPalindromInString(text)
-        }
+
     </script>
 </html>

@@ -1,7 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.longestPalindromInString = void 0;
-function longestPalindromInString(text) {
+function longestPalindromInString(element) {
+    let text = element.children[1].value || "";
+    if (element.children[element.children.length - 1].id !== "palindromResult") {
+        var p = document.createElement("p");
+        p.setAttribute("id", "palindromResult");
+        element.appendChild(p);
+    }
+    if (!text) {
+        element.children[element.children.length - 1].textContent = "Tried to check palindroms in empty text";
+        return false;
+    }
     let longestPalindroms = new Array();
     let longestStringLength = 0;
     for (let i = 0; i < text.length; i++) {
@@ -44,6 +54,8 @@ function longestPalindromInString(text) {
         if (tempStringForEven.length > longestStringLength)
             longestStringLength = tempStringForEven.length;
     }
-    return longestPalindroms;
+    console.log(1);
+    element.children[element.children.length - 1].textContent = longestPalindroms.join(", ");
+    return true;
 }
 exports.longestPalindromInString = longestPalindromInString;
