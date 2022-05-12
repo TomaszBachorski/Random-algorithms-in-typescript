@@ -1,15 +1,30 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.polyalphabeticCipher = exports.monoalphabeticCipher = exports.caesarCipher = void 0;
 const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+function activateCaesar(text, offset) {
+    let resultField = document.getElementById("ceasarCipherResult");
+    if (!text.value) {
+        resultField.textContent = "Not given any text to cipher";
+        return false;
+    }
+    if (offset.value && !Number(offset.value)) {
+        resultField.textContent = "Offset is type number";
+        return false;
+    }
+    if (!offset.value)
+        offset.value = "3";
+    resultField.textContent = `Hashed password: ${caesarCipher(text.value, Number(offset.value))}`;
+    return true;
+}
 function caesarCipher(pass, offset = 3) {
     let hash = "";
     for (let i = 0; i < pass.length; i++) {
-        hash += alphabet[(alphabet.indexOf(pass[i]) + offset) % alphabet.length];
+        if (!alphabet.includes(pass[i]))
+            hash += pass[i];
+        else
+            hash += alphabet[(alphabet.indexOf(pass[i]) + offset) % alphabet.length];
     }
     return hash;
 }
-exports.caesarCipher = caesarCipher;
 function monoalphabeticCipher(pass) {
     const key = "k3yb04rd";
     let newAlphabet = "";
@@ -24,7 +39,6 @@ function monoalphabeticCipher(pass) {
     }
     return hash;
 }
-exports.monoalphabeticCipher = monoalphabeticCipher;
 function polyalphabeticCipher(pass) {
     let hash = "";
     const key = "k3yb04rd";
@@ -34,4 +48,3 @@ function polyalphabeticCipher(pass) {
     }
     return hash;
 }
-exports.polyalphabeticCipher = polyalphabeticCipher;

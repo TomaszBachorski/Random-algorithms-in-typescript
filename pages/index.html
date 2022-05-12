@@ -18,12 +18,22 @@
     <h2 class="title">Algorithms</h2>
     <hr class="sectionDivider">
     <div>
-        <h2>Finding longest palindrom</h2>
+        <h2>Finding longest palindrom in a string</h2>
         <input type="text" id="textToFindPalindrom" placeholder="Enter string to find the longest palindrom">
         <button onclick="longestPalindromInString(this.parentNode)">Find palindrom</button>
     </div>
     <hr class="sectionDivider">
     <h2 class="title">Ciphers</h2>
     <hr class="sectionDivider">
+    <div id="ciphers">
+        <h2>Caesar cipher</h2>
+        <input type="text", id="caesarCipherText", placeholder="Enter text to cipher">
+        <input type="text", id="caesarCipherOffset", placeholder="Offset, by default is 3">
+        <button onclick="activateCaesar(this.previousElementSibling.previousElementSibling, this.previousElementSibling)">Cipher</button>
+        <p id="ceasarCipherResult"></p>
+    </div>
+    <script>
+        
+    </script>
 </body>
 </html>

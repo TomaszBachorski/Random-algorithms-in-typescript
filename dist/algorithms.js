@@ -1,6 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.longestPalindromInString = void 0;
 function longestPalindromInString(element) {
     let text = element.children[1].value || "";
     if (element.children[element.children.length - 1].id !== "palindromResult") {
@@ -57,4 +55,3 @@ function longestPalindromInString(element) {
     element.children[element.children.length - 1].textContent = `${longestPalindroms.join(", ")} - ${longestStringLength} ${longestStringLength === 1 ? "letter" : "letters"}`;
     return true;
 }
-exports.longestPalindromInString = longestPalindromInString;

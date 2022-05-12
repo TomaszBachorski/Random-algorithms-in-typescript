@@ -49,5 +49,3 @@ function longestPalindromInString(element: HTMLElement): boolean {
     element.children[element.children.length-1].textContent = `${longestPalindroms.join(", ")} - ${longestStringLength} ${longestStringLength===1 ? "letter" : "letters"}`;
     return true;
 }
-
-export { longestPalindromInString }
