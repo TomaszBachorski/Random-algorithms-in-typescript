@@ -24,8 +24,17 @@ function caesarCipher(pass: string, offset: number = 3): string {
     return hash;
 }
 
-function monoalphabeticCipher(pass: string): string {
-    const key: string = "k3yb04rd";
+function activateMonoalphabeticCipher (text:HTMLInputElement, keyword:HTMLInputElement): boolean {
+    let resultField:HTMLElement = document.getElementById("monoalphabeticResult")!;
+    if (!text.value || !keyword.value) {
+        resultField.textContent = "Plaintext and the key cannot be empty!";
+        return false;
+    }
+    resultField.textContent = `Hashed password: ${monoalphabeticCipher(text.value, keyword.value)}`;
+    return true;
+}
+
+function monoalphabeticCipher(pass: string, key: string): string {
     let newAlphabet: string = "";
     let hash = "";
     newAlphabet = [...new Set(key.split(""))].join(""); //Get only unique letters
@@ -38,9 +47,18 @@ function monoalphabeticCipher(pass: string): string {
     return hash;
 }
 
-function polyalphabeticCipher(pass: string): string {
+function activatePolyalphabeticCipher (text:HTMLInputElement, keyword:HTMLInputElement): boolean {
+    let resultField:HTMLElement = document.getElementById("polyalphabeticResult")!;
+    if (!text.value || !keyword.value) {
+        resultField.textContent = "Plaintext and the key cannot be empty!";
+        return false;
+    }
+    resultField.textContent = `Hashed password: ${polyalphabeticCipher(text.value, keyword.value)}`;
+    return true;
+}
+
+function polyalphabeticCipher(pass: string, key: string): string {
     let hash: string = "";
-    const key: string = "k3yb04rd";
     for (let i = 0; i < pass.length; i++) {
         let currentAlphabet: string = alphabet.slice(alphabet.indexOf(key[i%key.length])) + alphabet.slice(0, alphabet.indexOf(key[i%key.length]));
         hash += currentAlphabet[alphabet.indexOf(pass[i])];
